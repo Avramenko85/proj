@@ -1,0 +1,252 @@
+@import "rezet";
+@import "vars";
+@import "mixins";
+@import "sprite";
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Josefin Sans" sans-serif;
+  font-weight: 400;
+  color: $font_color_main;
+  padding: 10px;
+}
+
+.header {
+  background: url(../assets/img/header.png);
+  background-size: cover;
+
+  &__content {
+    @include column_centr;
+    padding-top: 27vh;
+  }
+  &__text {
+    @include column_centr;
+  }
+  &__text-big {
+    font-size: 50px;
+    font-weight: 700;
+  }
+  &__text-small {
+    padding-top: 1vh;
+    padding-bottom: 5vh;
+    letter-spacing: 5px;
+  }
+  .search {
+    position: relative;
+    input {
+      width: 40vw;
+      height: 60px;
+      padding-left: 25px;
+      border: 2px solid #ffffff;
+      outline: none;
+    }
+    button {
+      @include center_spase-elewenty;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 30%;
+      border: 2px solid #fff;
+      background: #5474fd;
+      color: #fff;
+      cursor: pointer;
+      &:hover {
+        transition: 0.5s;
+        background: #014d99;
+      }
+    }
+  }
+  .scroll {
+    padding-top: 80px;
+    padding-bottom: 25px;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    &:hover {
+      transition: 0.2s;
+      transform: scale(1.5);
+      color: rgb(201, 16, 16);
+    }
+  }
+  .arrow-down {
+    margin: 30px;
+    margin-bottom: 88px;
+  }
+  .arrow-down span {
+    @include arrow;
+  }
+  .logo {
+    @include center_spase-elewenty;
+    position: relative;
+    height: 83px;
+    background: #5474fd;
+    @media (max-width: 800px) {
+      justify-content: center;
+    }
+
+    .menu {
+      display: flex;
+      list-style: none;
+
+      &__item {
+        font-size: 14px;
+        font-family: "Aleo";
+        text-transform: uppercase;
+        padding: 0 6px;
+        :hover {
+          color: #000;
+        }
+      }
+    }
+    .nav__burger {
+      display: none;
+    }
+  }
+}
+.places {
+  @include center_spase-elewenty;
+  background: url(../assets/img/second_bg.png);
+  background-size: cover;
+  height: 700px;
+  &__info {
+    @include column-spase-elewenty;
+    width: 500px;
+    height: 400px;
+  }
+  .places__img {
+    @include column-spase-elewenty;
+    height: 550px;
+
+    &__first {
+      width: 70%;
+      margin-right: 50px;
+    }
+    &__second {
+      width: 70%;
+      margin-left: 50px;
+    }
+  }
+}
+.panel {
+  @include center_spase-elewenty;
+  position: relative;
+  height: 340px;
+  background: #333333;
+  .select {
+    @include column_centr;
+    z-index: 1;
+    background: #333333;
+  }
+  h1 {
+    padding-top: 26px;
+  }
+  .shape {
+    position: absolute;
+    top: 45px;
+
+    img {
+      @media (max-width: 800px) {
+        width: 60vw;
+      }
+    }
+  }
+}
+.booking,
+.booking__replic,
+.people__opinion {
+  background: url(../assets/img/spainbg.png);
+  background-size: cover;
+  height: 700px;
+  display: flex;
+  align-items: center;
+}
+.booking__replic {
+  background: url(../assets/img/spainbg2.png);
+  background-size: cover;
+  justify-content: flex-end;
+}
+.book__now {
+  @include column-spase-elewenty;
+  padding: 0 30px;
+  width: 30%;
+  height: 40%;
+  margin-left: 300px;
+  padding: 0 30px;
+  background: #232323d2;
+}
+.book {
+  margin-right: 300px;
+}
+.now_btn {
+  width: 20vw;
+  height: 55px;
+  background: #5474fd;
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 0 #5474fd inset, 0 0 10px 4px #5474fd;
+  }
+}
+.people__opinion {
+  background: url(../assets/img/background3.png);
+  background-size: cover;
+  @include column_centr;
+  justify-content: space-evenly;
+  .opinion {
+    display: flex;
+    width: 65%;
+  }
+  h1 {
+    font-size: 35px;
+  }
+  .feedback {
+    @include column-spase-elewenty;
+    width: 60%;
+    padding: 0 20px;
+    background: #333333;
+  }
+  .quotes {
+    p:before {
+      content: "\201c";
+      position: relative;
+      top: 30px;
+      font-weight: bold;
+      font-size: 80px;
+      color: #5474fd;
+    }
+  }
+}
+.footer {
+  @include column_centr;
+  justify-content: space-evenly;
+  height: 170px;
+  background: #232323;
+  &__content {
+    @include column-spase-elewenty;
+    height: 10vh;
+  }
+}
+.sprite {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  &__list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  svg {
+    width: 25px;
+    height: 15px;
+    fill: #000000;
+    &:hover {
+      fill: #002fff;
+    }
+  }
+}
+
+@import "media-quer";

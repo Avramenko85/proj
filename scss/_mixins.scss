@@ -1,0 +1,40 @@
+@mixin column_centr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@mixin center_spase-elewenty {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+@mixin column-spase-elewenty {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+// arrow
+@mixin arrow {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-bottom: 5px solid #eaeef1;
+  border-right: 5px solid #eaeef1;
+  transform: rotate(45deg);
+  margin: -16px;
+  animation: arrow-down 2s infinite;
+}
+@keyframes arrow-down {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
+}
